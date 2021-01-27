@@ -29,12 +29,12 @@ If you don't have the premium apikey you can use the free apikey and put <a href
 <br><br>
 Free apikey is public access with the rate limit 100Hits/Days.
 <br><br>
-But if you want the full access with the rate limit 3000Hits/Days,<br>please contact our team:
+But if you want the full access with the rate limit 3000Hits/Days,<br>Please contact our team:
 
    <table>
     <tbody>
         <tr>
-          <td>Goperation</td>
+          <td>G.operation</td>
           <td><a href="http://line.me/ti/p/~dont.ask.me.who">Chat</a></td>
         </tr>
         <tr>
@@ -42,7 +42,7 @@ But if you want the full access with the rate limit 3000Hits/Days,<br>please con
           <td><a href="http://line.me/ti/p/~paptetekdong">Chat</a></td>
         </tr>
         <tr>
-          <td>OUP.Group</td>
+          <td>Oup.group</td>
           <td><a href="http://ti/p/~@ivg8360z">Chat</a></td>
         </tr>
       <table>
