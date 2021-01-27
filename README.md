@@ -1,5 +1,5 @@
-# Public
-PUBLIC BOT FOR FUN
+### Public
+Public Bot for Group Line
 
 ### Requirment
 Python3 to up >>
@@ -21,7 +21,7 @@ $ cd Public
 $ python3 client.py
 ```
 ### Edit The Script
-Change Your Email and Password <a href="https://github.com/goodop/Public/blob/main/Data/login.json">here</a>
+Input Your token or change Your Email and Password <a href="https://github.com/goodop/Public/blob/main/Data/login.json">here</a>
 
 ### Input apikey
 Free apikey: ```imjustgood```
@@ -48,3 +48,6 @@ But if you want the full access with the rate limit 3000Hits/Days,<br>please con
         </tr>
       <table>
     <tbody>
+
+### Note
+This script use Flex fiture, make sure you enabled liff with the command 'Allowliff ' before you use other command.
