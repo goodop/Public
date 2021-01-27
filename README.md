@@ -26,7 +26,7 @@ Change Your Email and Password <a href="https://github.com/goodop/Public/blob/ma
 ### Input apikey
 Free apikey: ```imjustgood```
 
-If you don't have the premium apikey you can use the free apikey and put <a href=" ">here.</a>
+If you don't have the premium apikey you can use the free apikey and put <a href="https://github.com/goodop/Public/blob/38f2a29205c138ee75aedeac7de9bc6fb2a880a4/Data/api.json#L2">here.</a>
 <br><br>
 Free apikey is public access with the rate limit 100Hits/Days.
 <br><br>
