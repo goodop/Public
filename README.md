@@ -33,15 +33,15 @@ You can contact our team as bellow:
     <tbody>
         <tr>
           <td>Goperation</td>
-          <td><a href="https://github.com/goodop/api-imjustgood.com/blob/main/Example/apikey_status.py">Chat</a></td>
+          <td><a href="http://line.me/ti/p/~dont.ask.me.who">Chat</a></td>
         </tr>
         <tr>
           <td>Autobots</td>
-          <td><a href="https://github.com/goodop/api-imjustgood.com/blob/main/Example/apikey_status.py">Chat</a></td>
+          <td><a href="http://line.me/ti/p/~paptetekdong">Chat</a></td>
         </tr>
         <tr>
           <td>OUP.Group</td>
-          <td><a href="https://github.com/goodop/api-imjustgood.com/blob/main/Example/apikey_status.py">Chat</a></td>
+          <td><a href="line://ti/p/~@ivg8360z">Chat</a></td>
         </tr>
       <table>
     <tbody>
