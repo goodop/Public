@@ -1,4 +1,3 @@
-### Public
 Public Bot for Group Line
 
 ### Requirment
