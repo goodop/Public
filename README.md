@@ -16,9 +16,9 @@ pip3 install requests
 
 ### How to run
 ``` python
-git clone https://github.com/goodop/Public
-cd Public
-python3 client.py
+$ git clone https://github.com/goodop/Public
+$ cd Public
+$ python3 client.py
 ```
 
 ### Upgrade apikey
@@ -41,7 +41,7 @@ You can contact our team as bellow:
         </tr>
         <tr>
           <td>OUP.Group</td>
-          <td><a href="line://ti/p/~@ivg8360z">Chat</a></td>
+          <td><a href="http://ti/p/~@ivg8360z">Chat</a></td>
         </tr>
       <table>
     <tbody>
