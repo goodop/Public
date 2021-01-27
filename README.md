@@ -20,14 +20,17 @@ $ git clone https://github.com/goodop/Public
 $ cd Public
 $ python3 client.py
 ```
+### Edit The Script
+Change Your Email and Password <a href="https://github.com/goodop/Public/blob/main/Data/login.json">here</a>
 
-### Upgrade apikey
+### Input apikey
+Free apikey: ```imjustgood```
 
-You can change with the command provided or just put the premium apikey here.
-
-### Get Premium Apikey
-
-You can contact our team as bellow:
+If you don't have the premium apikey you can use the free apikey and put <a href=" ">here.</a>
+<br><br>
+Free apikey is public access with the rate limit 100Hits/Days.
+<br><br>
+But if you want the full access with the rate limit 3000Hits/Days,<br>please contact our team:
 
    <table>
     <tbody>
