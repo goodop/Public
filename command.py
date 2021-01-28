@@ -154,7 +154,7 @@ class justgood(threading.Thread):
                        self.client.sendVideoWithURL(to,data['videoUrl'])
 
                    if txt.startswith("youtube: ") or txt.startswith(key + " youtube: "):
-                       yturl = msg.text.split("youtube: ")[1]
+                       yturl = msg.text.split(": ")[1]
                        youtube = self.media.youtubedl(yturl)
                        data = youtube['result']
                        result = "    「 Youtube Result 」\n\n{}\n» Author: {}\n» Duration: {}\n» Viewers: {}".format(data["author"],data["duration"],data["watched"])
@@ -273,7 +273,7 @@ class justgood(threading.Thread):
                                   self.client.sendVideoWithURL(to,ang["postUrl"])
 
                    if txt.startswith("smulelink: ") or txt.startswith(key + " smulelink: "):
-                       url = msg.text.split("smulelink: ")[1]
+                       url = msg.text.split(": ")[1]
                        smule = self.media.smuledl(url)
                        data = smule["result"]
                        result = "    「 Smule Download 」\n\n» Title: {}\n» Caption: {}".format(data['title'],data['caption'])
@@ -479,7 +479,7 @@ class justgood(threading.Thread):
                          data = anniv['result']
                          result = "    「 Info Anniversary」\n\n» Tanggal Jadian: {}\n» Komitmen: {}\n» Karakteristik: {}".format(data["date"],data["description"],data["related"])
                          self.client.sendReplyMessage(id,to,result)
-                       except:self.client.sendReplyMessage(id,to,"「 Format Salah 」\nContoh: \nAnniversary: 17-07-2019")
+                       except:self.client.sendReplyMessage(id,to,"「 Format Salah 」\nContoh: \nMyanniv: 17-07-2019")
 
 # ** Random & Info **
 
