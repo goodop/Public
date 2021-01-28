@@ -157,11 +157,11 @@ class justgood(threading.Thread):
                        yturl = msg.text.split(": ")[1]
                        youtube = self.media.youtubedl(yturl)
                        data = youtube['result']
-                       result = "    「 Youtube Result 」\n\n{}\n» Author: {}\n» Duration: {}\n» Viewers: {}".format(data["author"],data["duration"],data["watched"])
-                       self.client.sendImageWithURL(to,thumbnail)
+                       result = "    「 Youtube Result 」\n\n{}\n» Author: {}\n» Duration: {}\n» Viewers: {}".format(data["title"],data["author"],data["duration"],data["watched"])
+                       self.client.sendImageWithURL(to,data["thumbnail"])
                        self.client.sendReplyMessage(id,to,result)
                        self.client.sendAudioWithURL(to,data["audioUrl"])
-                       self.client.sendVideoWithURL(to,ang["videoUrl"])
+                       self.client.sendVideoWithURL(to,data["videoUrl"])
 
                    if txt.startswith("lyric: ") or txt.startswith(key + " lyric: "):
                        query = txt.split("lyric: ")[1]
