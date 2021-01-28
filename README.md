@@ -50,3 +50,4 @@ But if you want to upgrade to Premium apikey with the rate limit 3000Hits/Days,<
 
 ### Note
 This script use Flex fiture, make sure you enabled liff with the command 'Allowliff ' before you use other command.
+<br> For more information, please join our forum discussion <a href="https://bit.ly/2K5Lbx4">click here</a>
