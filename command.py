@@ -254,7 +254,7 @@ class justgood(threading.Thread):
                        self.client.sendReplyMessage(id,to,result)
 
                    if txt.startswith("instapost: ") or txt.startswith(key + " instapost: "):
-                       posturl = text.split("instapost: ")[1]
+                       posturl = text.split(": ")[1]
                        instapost = self.media.instapost(posturl)
                        data = instapost['result']
                        if data["caption"] == "":caption = "None"
@@ -668,7 +668,7 @@ class justgood(threading.Thread):
                       self.key["key"]  = "";self.client.sendMessage(to,"Key reseted")
 
                    if txt.startswith("updateapi: ") or txt.startswith(key + " updateapi: "):
-                       apikey = text.split("updateapi: ")[1]
+                       apikey = text.split(": ")[1]
                        self.api["apikey"] = apikey;self.client.sendMessage(to,"Apikey upgraded.")
 
                    if txt== "allowliff" or txt == key + " allowliff":
@@ -676,7 +676,7 @@ class justgood(threading.Thread):
                       except Exception as e:print(e)
 
                    if txt.startswith("apistatus: ") or txt.startswith(key + " apistatus: "):
-                       idapi = text.split("apistatus: ")[1]
+                       idapi = text.split(": ")[1]
                        url = "https://api.imjustgood.com/status?apikey={}".format(idapi)
                        apikey = json.loads(requests.get(url).text)
                        data = apikey['result']
