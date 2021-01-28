@@ -1,4 +1,4 @@
-Public Bot for Group Line
+Bot Public for Line group. 
 
 ### Requirment
 Python3 to up >>
