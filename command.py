@@ -27,7 +27,7 @@ class justgood(threading.Thread):
         if self.uid in op.param3:
             if self.maker:self.client.acceptGroupInvitation(group)
             elif self.join:self.client.acceptGroupInvitation(group)
-            else:self.client.sendMessage(group,"Permission denied");self.client.leaveGroup(group)
+            else:self.client.acceptGroupInvitation(group);self.client.sendMessage(group,"Permission denied");self.client.leaveGroup(group)
     def notified_read_message(self,op):
         group = op.param1
         member = op.param2
@@ -288,14 +288,14 @@ class justgood(threading.Thread):
 # ** Media Searching **
 
                    if txt.startswith("bitlylink: ") or txt.startswith(key + " bitlylink: "):
-                       url = txt.split("bitlylink: ")[1]
+                       url = text.split(": ")[1]
                        bitly = self.media.bitly(url)
                        data = bitly['result']
                        result = "Converted to:\n{}".format(data)
                        self.client.sendReplyMessage(id,to,result)
 
                    if txt.startswith("tinyurl: ") or txt.startswith(key + " tinyurl: "):
-                       url = txt.split("tinyurl: ")[1]
+                       url = text.split(": ")[1]
                        tiny = self.media.tinyurl(url)
                        result = "Converted to:\n{}".format(tiny["result"])
                        self.client.sendReplyMessage(id,to,result)
