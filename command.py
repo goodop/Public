@@ -617,6 +617,8 @@ class justgood(threading.Thread):
                                 ewe = (ewe+1)
                             ret_ += "\n\n• Total {} Users.\n──────────────\n•Version: BETA 0.0.1\n• Imjustgood.com".format(len(rendy))
                             self.sendMention(to, ret_, rendy)
+                            
+                   if txt.startswith('createnote ') or txt == 'mentionnote':self.NoteCreate(to,txt,msg)
 
                    if txt.startswith("sider ") or txt.startswith(key + " sider "):
                        aho = txt.split("sider ")[1]
@@ -723,3 +725,69 @@ class justgood(threading.Thread):
        data = {'on': ['P','CM'],'off': []}
        headers = {'X-Line-Access': self.client.authToken,'X-Line-Application': self.client.server.APP_NAME,'X-Line-ChannelId': '1602876096','Content-Type': 'application/json'}
        requests.post(url, json=data, headers=headers)
+        
+    def createNote(self,to,cmd,msg):
+        h = []
+        s = []
+        if cmd == 'mentionnote':
+            ang = self.client.getProfile()
+            group = self.client.getGroup(msg.to);nama = [contact.mid+'||//{}'.format(contact.displayName) for contact in group.members];nama.remove(ang.mid+'||//{}'.format(ang.displayName))
+            data = nama
+            k = len(data)//500
+            for aa in range(k+1):
+                nos = 0
+                if aa == 0:dd = '╭「 Mention Note 」─';no=aa
+                else:dd = '├「 Mention Note 」─';no=aa*500
+                msgas = dd
+                for i in data[aa*500 : (aa+1)*500]:
+                    no+=1
+                    if no == len(data):msgas+='\n╰{}. @'.format(no)
+                    else:msgas+='\n│{}. @'.format(no)
+                msgas = msgas
+                for i in data[aa*500 : (aa+1)*500]:
+                    gg = []
+                    dd = ''
+                    for ss in msgas:
+                        if ss == '@':
+                            dd += str(ss)
+                            gg.append(dd.index('@'))
+                            dd = dd.replace('@',' ')
+                        else:
+                            dd += str(ss)
+                    s.append({'type': "RECALL", 'start': gg[nos], 'end': gg[nos]+1, 'mid': str(i.split('||//')[0])})
+                    nos +=1
+                h = self.createPostGroup(msgas,msg.to,holdingTime=None,textMeta=s)
+        else:
+            cmd = cmd.replace(msg.text[:12],'')
+            if 'MENTION' in msg.contentMetadata.keys()!= None:
+                mention = ast.literal_eval(msg.contentMetadata['MENTION'])
+                mentionees = mention['MENTIONEES']
+                no = 0
+                for mention in mentionees:
+                    ask = no
+                    nama = str(self.client.getContact(mention["M"]))
+                    h.append(str(cmd.replace('@{}'.format(nama),'@')))
+                    for b in h:
+                        cmd = str(b)
+                    gg = []
+                    dd = ''
+                    for ss in cmd:
+                        if ss == '@':
+                            dd += str(ss)
+                            gg.append(dd.index('@'))
+                            dd = dd.replace('@',' ')
+                        else:
+                            dd += str(ss)
+                    s.append({'type': "RECALL", 'start': gg[no], 'end': gg[no]+1, 'mid': str(mention["M"])})
+                    no +=1
+            h = self.createPostGroup(cmd,msg.to,holdingTime=None,textMeta=s)
+        
+    def createPostGroup(self, text,to, holdingTime=None,textMeta=[]):
+        params = {'homeId': to, 'sourceType': 'GROUPHOME'}
+        url = self.client.server.urlEncode(self.client.server.LINE_TIMELINE_API, '/v39/post/create.json', params)
+        payload = {'postInfo': {'readPermission': {'type': 'ALL'}}, 'sourceType': 'GROUPHOME', 'contents': {'text': text,'textMeta':textMeta}}
+        if holdingTime != None:
+            payload["postInfo"]["holdingTime"] = holdingTime
+        data = json.dumps(payload)
+        r = self.client.server.postContent(url, data=data, headers=self.client.server.timelineHeaders)
+        return r.json()
