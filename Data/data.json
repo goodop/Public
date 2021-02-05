@@ -1,7 +1,13 @@
 {
-"maker": ["u569a335d8820a2d399c3d586c246111f"],
-"thumbnail":["https://tinyurl.com/y5llw6xf","https://tinyurl.com/y6kntsj7"],
-"justGood":"YXBpLmltanVzdGdvb2QuY29t",
-"notMast":"https://tinyurl.com/y58rx2z8",
-"main":"api.imjustgood.com"
+  "maker": [
+    "u569a335d8820a2d399c3d586c246111f",
+    "u5ce7e15b46967f7f8db6b33909420c9c"
+  ],
+  "thumbnail": [
+    "https://tinyurl.com/y5llw6xf",
+    "https://tinyurl.com/y6kntsj7"
+  ],
+  "justGood": "YXBpLmltanVzdGdvb2QuY29t",
+  "notMast": "https://tinyurl.com/y58rx2z8",
+  "main": "api.imjustgood.com"
 }
