@@ -27,9 +27,10 @@ Free apikey : ```imjustgood```
 <br>
 Input your apikey <a href="https://github.com/goodop/Public/blob/38f2a29205c138ee75aedeac7de9bc6fb2a880a4/Data/api.json#L2">here.</a>
 <br><br>
-Free apikey is public access with the rate limit 50 Hits/Days.
+Free apikey is public access with rate limit 50 Hits/Days.
 <br>
-You can contact our team for upgrade to Premium Apikey with the rate limit 3000 Hits/Days.
+<br>
+You can contact our team for upgrade to Premium Apikey with rate limit 3000 Hits/Days.
 
 <table>
     <tbody>
