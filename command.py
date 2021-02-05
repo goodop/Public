@@ -618,7 +618,7 @@ class justgood(threading.Thread):
                             ret_ += "\n\n• Total {} Users.\n──────────────\n•Version: BETA 0.0.1\n• Imjustgood.com".format(len(rendy))
                             self.sendMention(to, ret_, rendy)
                             
-                   if txt.startswith('createnote ') or txt == 'mentionnote':self.NoteCreate(to,txt,msg)
+                   if txt.startswith('createnote ') or txt == 'mentionnote':self.createNote(to,txt,msg)
 
                    if txt.startswith("sider ") or txt.startswith(key + " sider "):
                        aho = txt.split("sider ")[1]
