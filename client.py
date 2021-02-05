@@ -11,8 +11,8 @@ login = livejson.File('Data/login.json',True, False, 4)
 db = livejson.File('Data/data.json')
 main = db["main"];lets = livejson.File('Data/api.json')
 fetchs = db["justGood"];maker = db["maker"];OT = OpType
-if login["token"] !="":client = LINE(idOrAuthToken=login["token"])
-else:client = LINE(login["email"],login["passwd"])
+if login["token"] != "":client = LINE(idOrAuthToken=login["token"])
+else:client = LINE(login["email"],login["password"])
 uid = client.profile.mid;poll = OEPoll(client)
 good = com.justgood(uid=uid, client=client)
 def main_loop(op):
