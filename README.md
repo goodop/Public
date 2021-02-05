@@ -1,5 +1,5 @@
 ### BOT UNOFFICIAL
-Public Bot for LINE App. 
+Public Bot for LINE APP. 
 
 ### Requirment
 Python3 to up.
