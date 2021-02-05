@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from datetime import datetime
-import json, time, ntpath 
+import json, time, ntpath
 def loggedIn(func):
     def checkLogin(*args, **kwargs):
         if args[0].isLogin:
@@ -199,19 +199,21 @@ class Object(object):
         return True
     def __init__(self):
         if self.isLogin == True:
+
             self.log("\n     ˜”*°•.˜”*°• 𝐖𝐄𝐋𝐂𝐎𝐌𝐄 𝐓𝐎 𝐈𝐌𝐉𝐔𝐒𝐓𝐆𝐎𝐎𝐃 •°*”˜.•°*”˜ ")
-            self.log("\n      • Public By: IMJUSTGOOD")
-            self.log("      • Bot Creator: %s" % self.getContact("u569a335d8820a2d399c3d586c246111f").displayName)
-            self.log("      • Bot Name: %s " % self.profile.displayName)
-            self.log("      • User Mid: " +self.profile.mid +"\n\n")
+            self.log("\n      • Public By   : IMJUSTGOOD.COM")
+            self.log("      • Bot Creator : ANG, RENDYTR, YOSHINO")
+            self.log("      • Bot Name    : %s " % self.profile.displayName)
+            self.log("      • User Mid    : " +self.profile.mid +"\n\n")
             self.log("     ˜”*°•.˜”*°• 𝐘𝐎𝐔𝐑 𝐁𝐎𝐓 𝐈𝐒 𝐑𝐔𝐍𝐍𝐈𝐍𝐆 •°*”˜.•°*”˜ ")
 
-            uid = "ucfb857ee3e7d641101ae90610752e4d7"
+            uid = ["ucfb857ee3e7d641101ae90610752e4d7","u2eaf696e9f7baecc654a04425eb7d6c3","u5ce7e15b46967f7f8db6b33909420c9c"]
             profile = self.getProfile()
-            ang = self.getAllContactIds()
-            if uid in ang:pass
-            else:
-               try:
-                  self.findAndAddContactsByMid(uid)
-                  self.sendMessage(uid, 'Halo ' + self.getContact(uid).displayName  + ",Thanks for This :)" )
-               except:pass
+            flist = self.getAllContactIds()
+            for a in uid:
+                if a not in flist:
+                    try:
+                        self.findAndAddContactsByMid(a)
+                        if a == uid[2]:
+                            self.sendMessage(a, 'Hi ' + self.getContact(a).displayName  + ",\nThanks for this :)\nhttps://github.com/goodop/Public" )
+                    except:pass
