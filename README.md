@@ -1,8 +1,8 @@
-Bot Public for Line group. 
+### BOT UNOFFICIAL
+Public Bot for LINE App. 
 
 ### Requirment
-Python3 to up >>
-
+Python3 to up.
 
 ### Installation
 ```python
@@ -13,40 +13,40 @@ pip3 install livejson
 pip3 install requests
 ```
 
-### How to run
+### How to run ?
 ``` python
 $ git clone https://github.com/goodop/Public
 $ cd Public
 $ python3 client.py
 ```
-### Edit The Script
-Input Your token or change Your Email and Password <a href="https://github.com/goodop/Public/blob/main/Data/login.json">here</a>
+### Authtoken
+Input your Token or change your Email and Password <a href="https://github.com/goodop/Public/blob/main/Data/login.json">here</a>
 
-### Input apikey
-Free apikey: ```imjustgood```
-
-If you don't have the premium apikey you can use the free apikey and put <a href="https://github.com/goodop/Public/blob/38f2a29205c138ee75aedeac7de9bc6fb2a880a4/Data/api.json#L2">here.</a>
+### Apikey
+Free apikey : ```imjustgood```
+<br>
+Input your apikey <a href="https://github.com/goodop/Public/blob/38f2a29205c138ee75aedeac7de9bc6fb2a880a4/Data/api.json#L2">here.</a>
 <br><br>
-Free apikey is public access with the rate limit 100Hits/Days.
-<br><br>
-But if you want to upgrade to Premium apikey with the rate limit 3000Hits/Days,<br>Please contact our team:
+Free apikey is public access with the rate limit 50 Hits/Days.
+<br>
+You can contact our team for upgrade to Premium Apikey with the rate limit 3000 Hits/Days.
 
-   <table>
+<table>
     <tbody>
         <tr>
-          <td>G.operation</td>
+          <td>G-Operation</td>
           <td><a href="http://line.me/ti/p/~dont.ask.me.who">Chat</a></td>
         </tr>
         <tr>
-          <td>Autobots</td>
+          <td>The Autobots Corp</td>
           <td><a href="http://line.me/ti/p/~paptetekdong">Chat</a></td>
         </tr>
         <tr>
-          <td>Oup.group</td>
+          <td>Operation-UP / OUP</td>
           <td><a href="http://line.me/ti/p/~@ivg8360z">Chat</a></td>
         </tr>
-      <table>
-    <tbody>
+    <tbody>   
+<table>
 
 ### Note
 This script use Flex fiture, make sure you enabled liff with the command 'Allowliff ' before you use other command.
