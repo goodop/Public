@@ -46,5 +46,5 @@ Free apikey : ```imjustgood```
 <table>
 
 ### Note
-This script use Flex fiture, make sure you enabled liff with the command ' Allowliff ' before you use other command.
+This script support for Flex Fiture, Type ```Allowliff``` to get access.
 <br>Join our forum discussion for more information <a href="https://bit.ly/2K5Lbx4">click here</a>
