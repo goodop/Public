@@ -24,13 +24,9 @@ Input your Token or change your Email and Password <a href="https://github.com/g
 
 ### Apikey
 Free apikey : ```imjustgood```
-<br>
-Input your apikey <a href="https://github.com/goodop/Public/blob/38f2a29205c138ee75aedeac7de9bc6fb2a880a4/Data/api.json#L2">here.</a>
-<br><br>
-Free apikey is public access with rate limit 50 Hits/Days.
-<br>
-<br>
-You can contact our team for upgrade to Premium Apikey with rate limit 3000 Hits/Days.
+<br>Input your apikey <a href="https://github.com/goodop/Public/blob/38f2a29205c138ee75aedeac7de9bc6fb2a880a4/Data/api.json#L2">here.</a>
+<br><br>Free apikey is public access with rate limit 50 Hits/Days.
+<br>You can contact our team for upgrade to Premium Apikey with rate limit 3000 Hits/Days.
 
 <table>
     <tbody>
@@ -50,5 +46,5 @@ You can contact our team for upgrade to Premium Apikey with rate limit 3000 Hits
 <table>
 
 ### Note
-This script use Flex fiture, make sure you enabled liff with the command 'Allowliff ' before you use other command.
-<br> For more information, please join our forum discussion <a href="https://bit.ly/2K5Lbx4">click here</a>
+This script use Flex fiture, make sure you enabled liff with the command ' Allowliff ' before you use other command.
+<br>Join our forum discussion for more information <a href="https://bit.ly/2K5Lbx4">click here</a>
