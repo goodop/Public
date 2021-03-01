@@ -9,8 +9,6 @@
 <img alt="GitHub" src="https://img.shields.io/github/license/goodop/Public" style="max-width:100%;">                                   
 </p>
 
-### Requirment
-Python3 to up.
 
 ### Installation
 ```python
