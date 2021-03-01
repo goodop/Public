@@ -4,9 +4,9 @@
 <img alt="python" src="https://img.shields.io/badge/Python-14354C?style=for-the-badge&logo=python&logoColor=white" height="20" style=""max-width:100%;">
 <img alt="ubuntu" src="https://img.shields.io/badge/Ubuntu-E95420?style=for-the-badge&logo=ubuntu&logoColor=white" height="20" style=""max-width:100%;">
 <img alt="windows" src="https://img.shields.io/badge/Windows-0078D6?style=for-the-badge&logo=windows&logoColor=white" height="20" style=""max-width:100%;">
-<img alt="PyPI - Python Version" src="https://img.shields.io/pypi/pyversions/justgood" style="max-width:100%;">
-<img alt="GitHub" src="https://img.shields.io/github/license/goodop/Public" style="max-width:100%;">
 <img alt="made" src="http://ForTheBadge.com/images/badges/built-with-love.svg" height="20"  style="max-width:100%;">
+<img alt="PyPI - Python Version" src="https://img.shields.io/pypi/pyversions/justgood" style="max-width:100%;">
+<img alt="GitHub" src="https://img.shields.io/github/license/goodop/Public" style="max-width:100%;">                                   
 </p>
 
 ### Requirment
