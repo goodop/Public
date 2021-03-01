@@ -1,6 +1,8 @@
 ### BOT LINE UNOFFICIAL
 <p>
 <img alt="PyPI - Python Version" src="https://img.shields.io/pypi/pyversions/justgood" style="max-width:100%;">
+<img alt="GitHub" src="https://img.shields.io/github/license/goodop/Public" style="max-width:100%;">
+
 
 </p>
 
