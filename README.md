@@ -1,10 +1,12 @@
 ### BOT LINE UNOFFICIAL
 <p>
 <a href="https://line.me/ti/p/~dont.ask.me.who" rel="nofollow"><img src="https://camo.githubusercontent.com/626aaff51013a9833c8431d4d3124f12f89f7c097b52639675fc31923e640ef1/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4c494e452d3030633330302e7376673f267374796c653d666f722d7468652d6261646765266c6f676f3d6c696e65266c6f676f436f6c6f723d666666666666" height="20" data-canonical-src="https://img.shields.io/badge/LINE-00c300.svg?&amp;style=for-the-badge&amp;logo=line&amp;logoColor=ffffff" style="max-width:100%;"></a>
-<img src="https://img.shields.io/badge/Python-14354C?style=for-the-badge&logo=python&logoColor=white" height="20" style=""max-width:100%;">
-<img src="https://img.shields.io/badge/Ubuntu-E95420?style=for-the-badge&logo=ubuntu&logoColor=white" height="20" style=""max-width:100%;">
+<img alt="python" src="https://img.shields.io/badge/Python-14354C?style=for-the-badge&logo=python&logoColor=white" height="20" style=""max-width:100%;">
+<img alt="ubuntu" src="https://img.shields.io/badge/Ubuntu-E95420?style=for-the-badge&logo=ubuntu&logoColor=white" height="20" style=""max-width:100%;">
+<img alt="windows" src="https://img.shields.io/badge/Windows-0078D6?style=for-the-badge&logo=windows&logoColor=white" height="20" style=""max-width:100%;">
 <img alt="PyPI - Python Version" src="https://img.shields.io/pypi/pyversions/justgood" style="max-width:100%;">
 <img alt="GitHub" src="https://img.shields.io/github/license/goodop/Public" style="max-width:100%;">
+<img alt="made" src="http://ForTheBadge.com/images/badges/built-with-love.svg" height="20"  style="max-width:100%;">
 </p>
 
 ### Requirment
