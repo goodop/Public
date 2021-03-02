@@ -556,7 +556,7 @@ class justgood(threading.Thread):
 
 
                    if txt== "convertimage" or txt == key + " convertimage":
-                       sender = self.setting["convUser"] = of
+                       self.setting["convUser"] = of
                        self.setting["convImg"] = True
                        self.client.sendReplyMessage(id,to,"send an image")
 
