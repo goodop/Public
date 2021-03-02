@@ -9,7 +9,7 @@
 <img alt="GitHub" src="https://img.shields.io/github/license/goodop/Public" style="max-width:100%;">                                   
 </p>
 
-### Last update
+### New update
 <table>
     <tbody>
         <tr>
