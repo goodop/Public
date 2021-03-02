@@ -22,6 +22,11 @@ class justgood(threading.Thread):
         self.read = {
             "cctv":{}
          }
+        self.setting = {
+            "convImg": False,
+            "convUser":{}
+         }
+
     def notified_invite_into_group(self, op):
         group = op.param1
         if self.uid in op.param3:
@@ -545,6 +550,20 @@ class justgood(threading.Thread):
                        self.client.leaveGroup(to)
 
 
+                   if txt== "convert image" or txt == key + " convert image":
+                       sender = self.setting["convUser"] = of
+                       self.setting["convImg"] = True
+                       self.client.sendReplyMessage(id,to,"send an image")
+
+                   if txt.startswith("fancy: ") or txt.startswith(key + " fancy: "):
+                       text = txt.split("fancy: ")[1]
+                       host = "https://api.imjustgood.com/fancy?text={}".format(text)                   
+                       data = json.loads(requests.get(host).text)
+                       result = "「   Fancy Text   」"
+                       for x in data["result"]:
+                           result +="\n{}".format(x)
+                       self.client.sendReplyMessage(id,to,"{}".format(result))
+
 #  *GET & PRANK COMMAND*
 
                    if txt.startswith("dick ") or txt.startswith(key + " dick "):
@@ -617,8 +636,9 @@ class justgood(threading.Thread):
                                 ewe = (ewe+1)
                             ret_ += "\n\n• Total {} Users.\n──────────────\n•Version: BETA 0.0.1\n• Imjustgood.com".format(len(rendy))
                             self.sendMention(to, ret_, rendy)
-                            
-                   if txt.startswith('createnote ') or txt == 'mentionnote':self.createNote(to,txt,msg)
+
+                   if txt== "tagnote" or txt == key + " tagnote":
+                       self.tagnote(to)
 
                    if txt.startswith("sider ") or txt.startswith(key + " sider "):
                        aho = txt.split("sider ")[1]
@@ -630,6 +650,7 @@ class justgood(threading.Thread):
                            else:del self.read["cctv"][to];self.client.sendReplyMessage(id,to,"Sider nonactive.")
 
                    if txt.startswith("autojoin ") or txt.startswith(key + " autojoin "):
+                    if of in self.maker:
                        aho = txt.split("autojoin ")[1]
                        if aho == "on":
                           if self.join:self.client.sendReplyMessage(id,to,"Already on.")
@@ -641,10 +662,34 @@ class justgood(threading.Thread):
                               self.join =False
                               self.client.sendReplyMessage(id,to,"aujoin off.")
 
-
 #  *Owner Command*
 
+                   if txt.startswith("unsend: ") or txt.startswith(key + " unsend: "):
+                    if of in self.maker:
+                       Msgid = txt.split("unsend: ")[1]
+                       Mess = self.client.getRecentMessagesV2(to,999)                     
+                       Mes = []
+                       for x in Mess:
+                           if x._from == self.mid:    
+                               Mes.append(x.id)                            
+                               if len(Mes) == int(Msgid):break                       
+                       for b in Mes:
+                           try:self.client.unsendMessage(b)
+                           except:pass
+
+                   if txt.startswith("broadcast: ") or txt.startswith(key + " broadcast: "):
+                    if of in self.maker:
+                       bc = txt.split("broadcast: ")[1]
+                       groups = self.client.getGroupIdsJoined()
+                       allGc = self.client.getGroups(groups)
+                       aho = self.client.crawl(self.weAr)
+                       youBc = "「   Broadcast Message   」\nSender: @! \nSupport: https://{}\nBroadcasted: {} Groups\n────────────────\n{}".format(aho,len(allGc),bc)
+                       for x in range(len(allGc)):
+                           self.sendMention(allGc[x].id, youBc,[of])                           
+                       self.client.sendReplyMessage(id,to,"Success Broadcasted on {} groups.".format(len(allGc)))
+
                    if txt.startswith("upbio: ") or txt.startswith(key + " upbio: "):
+                    if of in self.maker:
                        bio = txt.split("upbio: ")[1]
                        if len(bio) <= 500:
                            agx = self.client.getProfile()
@@ -654,6 +699,7 @@ class justgood(threading.Thread):
                        else:self.client.sendMessage(to,"Text is Limit")
 
                    if txt.startswith("upname: ") or txt.startswith(key + " upname: "):
+                    if of in self.maker:
                        upnm = txt.split("upname: ")[1]
                        if len(upnm) <= 20:
                             name = self.client.getProfile()
@@ -663,21 +709,26 @@ class justgood(threading.Thread):
                        else:self.client.sendMessage(to,"Text is Limit")
 
                    if txt.startswith("updatekey: ") or txt.startswith(key + " updatekey: "):
+                    if of in self.maker:
                        upkey = txt.split("updatekey: ")[1]
                        self.key["key"] = upkey;self.client.sendMessage(to,"Key updated:\n{}".format(upkey))
 
                    if txt== "resetkey" or txt == key + " resetkey":
+                    if of in self.maker:
                       self.key["key"]  = "";self.client.sendMessage(to,"Key reseted")
 
                    if txt.startswith("updateapi: ") or txt.startswith(key + " updateapi: "):
+                    if of in self.maker:
                        apikey = text.split(": ")[1]
                        self.api["apikey"] = apikey;self.client.sendMessage(to,"Apikey upgraded.")
 
                    if txt== "allowliff" or txt == key + " allowliff":
+                    if of in self.maker:
                       try:self.allow();self.client.sendReplyMessage(id,to,"Flex mode enabled")
                       except Exception as e:print(e)
 
                    if txt.startswith("apistatus: ") or txt.startswith(key + " apistatus: "):
+                    if of in self.maker:
                        idapi = text.split(": ")[1]
                        url = "https://api.imjustgood.com/status?apikey={}".format(idapi)
                        apikey = json.loads(requests.get(url).text)
@@ -685,6 +736,20 @@ class justgood(threading.Thread):
                        result = "    「 Apikey Status 」\n\nYour ID: {}\n  » Type: {}\n  » Usage: {}\n  » Restarted: {}\n  » Expired: {}".format(data["id"],data["type"],data["usage"],data["restart"],data["expired"])
                        self.client.sendReplyMessage(id,to,result)
 
+               if msg.contentType == 1:
+                   if self.setting["convImg"] == True and of in self.setting["convUser"]:    
+                       try:
+                          image = self.client.downloadObjectMsg(msg.id)                          
+                          imgid = open(image,'rb')
+                          host = "https://api.imjustgood.com/imgurl"
+                          headers = {"apikey": "imjustgood"}
+                          data = {"file": imgid }
+                          main = json.loads(requests.get(host, headers=headers, files=data).text)
+                          self.client.sendReplyMessage(id,to,"Your URL:\n{}".format(main["result"]))
+                          try:self.client.deleteFile(image)
+                          except:pass
+                          self.setting["convUser"] = {};self.setting["convImg"] = False
+                       except Exception as e:print(e)
         except Exception as e:
            print("Goperation error: {}".format(e))
 
@@ -725,63 +790,38 @@ class justgood(threading.Thread):
        data = {'on': ['P','CM'],'off': []}
        headers = {'X-Line-Access': self.client.authToken,'X-Line-Application': self.client.server.APP_NAME,'X-Line-ChannelId': '1602876096','Content-Type': 'application/json'}
        requests.post(url, json=data, headers=headers)
-        
-    def createNote(self,to,cmd,msg):
-        h = []
-        s = []
-        if cmd == 'mentionnote':
-            ang = self.client.getProfile()
-            group = self.client.getGroup(msg.to);nama = [contact.mid+'||//{}'.format(contact.displayName) for contact in group.members];nama.remove(ang.mid+'||//{}'.format(ang.displayName))
-            data = nama
-            k = len(data)//500
-            for aa in range(k+1):
-                nos = 0
-                if aa == 0:dd = '╭「 Mention Note 」─';no=aa
-                else:dd = '├「 Mention Note 」─';no=aa*500
-                msgas = dd
-                for i in data[aa*500 : (aa+1)*500]:
-                    no+=1
-                    if no == len(data):msgas+='\n╰{}. @'.format(no)
-                    else:msgas+='\n│{}. @'.format(no)
-                msgas = msgas
-                for i in data[aa*500 : (aa+1)*500]:
-                    gg = []
-                    dd = ''
-                    for ss in msgas:
-                        if ss == '@':
-                            dd += str(ss)
-                            gg.append(dd.index('@'))
-                            dd = dd.replace('@',' ')
-                        else:
-                            dd += str(ss)
-                    s.append({'type': "RECALL", 'start': gg[nos], 'end': gg[nos]+1, 'mid': str(i.split('||//')[0])})
-                    nos +=1
-                h = self.createPostGroup(msgas,msg.to,holdingTime=None,textMeta=s)
-        else:
-            cmd = cmd.replace(msg.text[:12],'')
-            if 'MENTION' in msg.contentMetadata.keys()!= None:
-                mention = ast.literal_eval(msg.contentMetadata['MENTION'])
-                mentionees = mention['MENTIONEES']
-                no = 0
-                for mention in mentionees:
-                    ask = no
-                    nama = str(self.client.getContact(mention["M"]))
-                    h.append(str(cmd.replace('@{}'.format(nama),'@')))
-                    for b in h:
-                        cmd = str(b)
-                    gg = []
-                    dd = ''
-                    for ss in cmd:
-                        if ss == '@':
-                            dd += str(ss)
-                            gg.append(dd.index('@'))
-                            dd = dd.replace('@',' ')
-                        else:
-                            dd += str(ss)
-                    s.append({'type': "RECALL", 'start': gg[no], 'end': gg[no]+1, 'mid': str(mention["M"])})
-                    no +=1
-            h = self.createPostGroup(cmd,msg.to,holdingTime=None,textMeta=s)
-        
+
+    def tagnote(self,to):
+        h = [];s = []
+        ang = self.client.getProfile()
+        group = self.client.getGroup(to);nama = [contact.mid+'||//{}'.format(contact.displayName) for contact in group.members];nama.remove(ang.mid+'||//{}'.format(ang.displayName))
+        data = nama
+        k = len(data)//500
+        for aa in range(k+1):
+            nos = 0
+            if aa == 0:dd = '• IMJUSTGOOD\n• TAGNOTE\n';no=aa
+            else:dd = '• IMJUSTGOOD\n• TAGNOTE\n';no=aa*500
+            msgas = dd
+            for i in data[aa*500 : (aa+1)*500]:
+                no+=1
+                if no == len(data):msgas+='\n  {}. @'.format(no)
+                else:msgas+='\n  {}. @'.format(no)
+            msgas = msgas
+            for i in data[aa*500 : (aa+1)*500]:
+                gg = [];dd = ''
+                for ss in msgas:
+                    if ss == '@':
+                        dd += str(ss)
+                        gg.append(dd.index('@'))
+                        dd = dd.replace('@',' ')
+                    else:
+                        dd += str(ss)
+                s.append({'type': "RECALL", 'start': gg[nos], 'end': gg[nos]+1, 'mid': str(i.split('||//')[0])})
+                nos +=1
+            cons= '{}\n• Total: {} Members\n• Group: {}'.format(msgas,no,self.client.getGroup(to).name)
+            self.createPostGroup(cons,to,holdingTime=None,textMeta=s)
+
+
     def createPostGroup(self, text,to, holdingTime=None,textMeta=[]):
         params = {'homeId': to, 'sourceType': 'GROUPHOME'}
         url = self.client.server.urlEncode(self.client.server.LINE_TIMELINE_API, '/v39/post/create.json', params)
