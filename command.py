@@ -103,36 +103,41 @@ class justgood(threading.Thread):
                        just += "\n    28. " + Good + "Arti nama: Name"
                        just += "\n    29. " + Good + "Arti Mimpi: Name"
                        just += "\n    30. " + Good + "Handphone: Brand"
-                       just += "\n    31. " + Good + "Birthday: dd-mm-yyyy"
-                       just += "\n    32. " + Good + "Myanniv: dd-mm-yyyy"
+                       just += "\n    31. " + Good + "Fancytext: Yourtext"
+                       just += "\n    32. " + Good + "Birthday: dd-mm-yyyy"
+                       just += "\n    33. " + Good + "Myanniv: dd-mm-yyyy"
                        just += "\n\n   Random & Info"
-                       just += "\n    33. " + Good + "Coronavirus"
-                       just += "\n    34. " + Good + "Kamasutra"
-                       just += "\n    35. " + Good + "Info Bmkg"
-                       just += "\n    36. " + Good + "Topnews"
-                       just += "\n    37. " + Good + "Pornstar"
-                       just += "\n    38. " + Good + "Quotes"
-                       just += "\n    39. " + Good + "Hentai"
+                       just += "\n    34. " + Good + "Convertimage"
+                       just += "\n    35. " + Good + "Coronavirus"
+                       just += "\n    36. " + Good + "Kamasutra"
+                       just += "\n    37. " + Good + "Info Bmkg"
+                       just += "\n    38. " + Good + "Topnews"
+                       just += "\n    39. " + Good + "Pornstar"
+                       just += "\n    40. " + Good + "Quotes"
+                       just += "\n    41. " + Good + "Hentai"
                        just += "\n\n   Get & Prank"
-                       just += "\n    40. " + Good + "Dick @mention"
-                       just += "\n    41. " + Good + "Tits @mention"
-                       just += "\n    42. " + Good + "Vagina @mention"
-                       just += "\n    43. " + Good + "Meme @tag / % - %"
+                       just += "\n    42. " + Good + "Dick @mention"
+                       just += "\n    43. " + Good + "Tits @mention"
+                       just += "\n    44. " + Good + "Vagina @mention"
+                       just += "\n    45. " + Good + "Meme @tag / % - %"
                        just += "\n\n   Group Utility"
-                       just += "\n    44. " + Good + "Tagall"
-                       just += "\n    45. " + Good + "Sider on"
-                       just += "\n    46. " + Good + "Sider off"
+                       just += "\n    46. " + Good + "Tagall"
+                       just += "\n    47. " + Good + "Tagnote"
+                       just += "\n    48. " + Good + "Sider on"
+                       just += "\n    49. " + Good + "Sider off"
                        good_ = "\n\n» Owner Command:"
-                       good_ += "\n    47. " + Good + "Upbio: %"
-                       good_ += "\n    48. " + Good + "Upname: %"
-                       good_ += "\n    49. " + Good + "Updatekey: %"
-                       good_ += "\n    50. " + Good + "Resetkey"
-                       good_ += "\n    51. " + Good + "Allowliff"
-                       good_ += "\n    52. " + Good + "Apistatus: Apikey"
-                       good_ += "\n    53. " + Good + "Updateapi: Apikey"
+                       good_ += "\n    50. " + Good + "Upbio: %"
+                       good_ += "\n    51. " + Good + "Upname: %"
+                       good_ += "\n    52. " + Good + "Unsend: $"
+                       good_ += "\n    53. " + Good + "Broadcast: %"
+                       good_ += "\n    54. " + Good + "Updatekey: %"
+                       good_ += "\n    55. " + Good + "Resetkey"
+                       good_ += "\n    56. " + Good + "Allowliff"
+                       good_ += "\n    57. " + Good + "Apistatus: Apikey"
+                       good_ += "\n    58. " + Good + "Updateapi: Apikey"
                        footer = "\n──────────────\n"
-                       footer += "• Version: BETA 0.0.1\n"
-                       footer += "• Api.imjustgood.com"
+                       footer += "$ = Num || % = Text\n"
+                       footer += "https://api.imjustgood.com"
                        public = just + footer
                        master = just + good_ + footer
                        if of in self.maker:self.client.sendReplyMessage(id,to,"{}".format(master))
@@ -550,13 +555,13 @@ class justgood(threading.Thread):
                        self.client.leaveGroup(to)
 
 
-                   if txt== "convert image" or txt == key + " convert image":
+                   if txt== "convertimage" or txt == key + " convertimage":
                        sender = self.setting["convUser"] = of
                        self.setting["convImg"] = True
                        self.client.sendReplyMessage(id,to,"send an image")
 
-                   if txt.startswith("fancy: ") or txt.startswith(key + " fancy: "):
-                       text = txt.split("fancy: ")[1]
+                   if txt.startswith("fancytext: ") or txt.startswith(key + " fancytext: "):
+                       text = txt.split("fancytext: ")[1]
                        host = "https://api.imjustgood.com/fancy?text={}".format(text)                   
                        data = json.loads(requests.get(host).text)
                        result = "「   Fancy Text   」"
