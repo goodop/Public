@@ -238,6 +238,15 @@ class Talk(object):
     def getPreviousMessagesV2WithReadCount(self, messageBoxId, endMessageId, messagesCount=50):
         return self.talk.getPreviousMessagesV2WithReadCount(messageBoxId, endMessageId, messagesCount)
 
+    @loggedIn
+    def getRecentMessagesV2(self, chatId, count=50):
+        return self.talk.getRecentMessagesV2(chatId,count)
+
+    @loggedIn
+    def unsendMessage(self, messageId):
+        self._unsendMessageReq += 1
+        return self.talk.unsendMessage(self._unsendMessageReq, messageId)
+
     """Object"""
 
     @loggedIn
