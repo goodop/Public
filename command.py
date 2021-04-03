@@ -3,7 +3,7 @@ from justgood import imjustgood
 import os,traceback,sys,time,threading,livejson,random,re,ast,json,requests
 #** Dont change or remove if you are not sure **
 #** For Premium Apikey you can contact our team **
-#** ID: line://ti/p/~dont.ask.me.who /*/ ID: line://ti/p/ryc35PaVQF /*/ ID: line://ti/p/~@ivg8360z **
+#** ID: bit.ly/ang-id /*/ ID: line://ti/p/ryc35PaVQF /*/ ID: line://ti/p/~@ivg8360z **
 class justgood(threading.Thread):
     def __init__(self, uid=None, client=None):
         super(justgood, self).__init__()
